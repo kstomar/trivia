@@ -1,0 +1,25 @@
+<%= form_with(model: trivium, local: true) do |form| %>
+  <% if trivium.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(trivium.errors.count, "error") %> prohibited this trivium from being saved:</h2>
+
+      <ul>
+        <% trivium.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <% Question.all.each do |question| %>
+    <%= question.title%>
+     <% question.options.each do |option| %>
+      <li>
+        <%= check_box_tag "question[#{question.id}]", option.id -%>
+        <%= h option.title -%>
+      </li>
+    <% end %>
+  <% end %>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

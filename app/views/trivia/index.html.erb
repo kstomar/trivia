@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Trivia</h1>
+<%= link_to 'Create New Trivium', new_trivium_path, class: 'btn btn-info' %>
+
+<br>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th > User Name</th>
+      <th > User Email</th>
+      <th > User Score</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trivia.each do |trivium| %>
+      <tr>
+        <td><%= trivium.user.name %></td>
+        <td><%= trivium.user.email %></td>
+        <td><%= trivium.score %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
