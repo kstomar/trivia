@@ -16,12 +16,15 @@
     <%= form.text_field :title %>
   </div>
 
-  <%= form.fields_for :options do |option| %>
-    <%= render 'option_fields', f: option %>
-  <% end %> 
+  <div id="options">
+    <%= form.fields_for :options do |option| %>
+      <%= render 'option_fields', f: option %>
+    <% end %>
+  </div>
+
   <div class="links">
     <%= link_to_add_association 'add options', form, :options %>
-  </div> 
+  </div>
   <div class="actions">
     <%= form.submit %>
   </div>

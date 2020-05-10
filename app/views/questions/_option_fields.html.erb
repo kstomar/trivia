@@ -1,5 +1,6 @@
 <div class="nested-fields fields">
-	<%= f.label :option %>
-	<%= f.text_field :title %>
-	<%= link_to_remove_association "remove option", f %>
+    <%= f.label :option %>
+    <%= f.text_field :title %>
+    <%= f.check_box :is_answer %>
+    <%= link_to_remove_association "remove option", f %>
 </div>
