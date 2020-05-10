@@ -13,19 +13,16 @@
 
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class: "form-control" %>
   </div>
 
   <div id="options">
     <%= form.fields_for :options do |option| %>
       <%= render 'option_fields', f: option %>
     <% end %>
+    <%= link_to_add_association 'add options', form, :options, class: "btn btn-info" %>
   </div>
-
-  <div class="links">
-    <%= link_to_add_association 'add options', form, :options %>
-  </div>
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions" style="margin: 29px 0 0 0;">
+    <%= form.submit "Create", class: "btn btn-success"  %>
   </div>
 <% end %>
