@@ -4,7 +4,7 @@ class TriviaController < ApplicationController
   # GET /trivia
   # GET /trivia.json
   def index
-    @trivia = Trivium.all
+    @trivia = Trivium.where.not(user_id: current_user.id)
   end
 
   # GET /trivia/new
